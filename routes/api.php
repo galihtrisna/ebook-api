@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\heloController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::get('/halo', function(){
+//     return ["me" => "tamvan"];
+// });
+
+// Route::get('/helo', [heloController::class, 'index']);
+
+Route::resource('helo', heloController::class);
+Route::resource('siswa', SiswaController::class);
+Route::resource('book', BookController::class);
